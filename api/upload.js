@@ -1,30 +1,14 @@
-const multer = require('multer');
-const sharp = require('sharp');
-const fs = require('fs');
-const path = require('path');
-const express = require("express");
-const app = express();
-
-const PORT = process.env.PORT || 5000; // Render will set PORT dynamically
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
-
+const multer = require("multer");
+const sharp = require("sharp");
 
 const upload = multer({ storage: multer.memoryStorage() });
 
-module.exports = async (req, res) => {
-    // Ensure POST method
-    if (req.method !== 'POST') {
-        res.status(405).json({ message: 'Method not allowed' });
-        return;
-    }
-
+const uploadHandler = async (req, res) => {
     try {
         // Parse the uploaded image
-        upload.single('file')(req, {}, async (err) => {
+        upload.single("file")(req, {}, async (err) => {
             if (err) {
-                res.status(400).json({ error: 'File upload error' });
+                res.status(400).json({ error: "File upload error" });
                 return;
             }
 
@@ -50,12 +34,17 @@ module.exports = async (req, res) => {
             }
 
             // Send processed image back
-            res.setHeader('Content-Type', 'image/jpeg');
-            res.setHeader('Content-Disposition', `attachment; filename="scaled_${fileName}"`);
+            res.setHeader("Content-Type", "image/jpeg");
+            res.setHeader(
+                "Content-Disposition",
+                `attachment; filename="scaled_${fileName}"`
+            );
             res.send(processedBuffer);
         });
     } catch (error) {
-        console.error('Error processing image:', error);
-        res.status(500).json({ error: 'Internal Server Error' });
+        console.error("Error processing image:", error);
+        res.status(500).json({ error: "Internal Server Error" });
     }
 };
+
+module.exports = uploadHandler;
