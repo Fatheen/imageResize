@@ -9,6 +9,11 @@
     },
     "scripts": {
       "start": "node server.js"
-    }
+    },
+    "engines": {
+  "node": "18.x"
+}
+
+    
   }
   
