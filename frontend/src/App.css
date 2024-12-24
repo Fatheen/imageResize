@@ -1,0 +1,130 @@
+
+.modern-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+.modern-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #007bff;
+  margin-bottom: 30px;
+}
+
+.upload-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.custom-file-input {
+  border: 2px solid #007bff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.custom-file-input:hover {
+  border-color: #0056b3;
+}
+
+.modern-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modern-button:hover {
+  background-color: #0056b3;
+}
+
+.modern-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.processed-section {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.modern-subtitle {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.no-images-message {
+  font-size: 1rem;
+  color: #888;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.image-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px; 
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+  max-width: 220px; 
+  margin: auto; 
+}
+
+.image-card:hover {
+  transform: translateY(-5px);
+}
+
+.image-preview {
+  max-width: 100%;
+  max-height: 120px;
+  object-fit: cover; 
+  border-radius: 5px;
+}
+
+.image-info {
+  margin-top: 15px;
+}
+
+.image-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.image-dimensions {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.modern-download-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.modern-download-button:hover {
+  background-color: #218838;
+}
